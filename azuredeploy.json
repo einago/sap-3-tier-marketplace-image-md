@@ -64,7 +64,7 @@
         "description": "Password for the Virtual Machine."
       }
     },
-    "vnetName": {
+    "vnetId": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
@@ -447,6 +447,7 @@
     "ascsvmCount": "[variables('vmSizes')[parameters('sapSystemSize')][parameters('systemAvailability')].ascsservercount]",
     "divmCount": "[variables('vmSizes')[parameters('sapSystemSize')][parameters('systemAvailability')].diservercount]",
     "sidlower": "[toLower(parameters('sapSystemId'))]",
+    "vnetName": "[parameters('vnetId')]"
     "vmName": "[variables('sidlower')]",
     "subnetName": "Subnet",
     "subnets": {
