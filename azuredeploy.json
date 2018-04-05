@@ -64,6 +64,13 @@
         "description": "Password for the Virtual Machine."
       }
     },
+    "vnetName": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "The name of the vNet you want to use."
+      }
+    },    
     "subnetId": {
       "type": "string",
       "defaultValue": "",
@@ -441,7 +448,6 @@
     "divmCount": "[variables('vmSizes')[parameters('sapSystemSize')][parameters('systemAvailability')].diservercount]",
     "sidlower": "[toLower(parameters('sapSystemId'))]",
     "vmName": "[variables('sidlower')]",
-    "vnetName": "[concat(variables('sidlower'), '-vnet')]",
     "subnetName": "Subnet",
     "subnets": {
       "true": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnetName'))]",
